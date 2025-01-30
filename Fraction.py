@@ -1,8 +1,10 @@
 class Fraction(object):
 
     def __init__(self, numerator=0, denominator=1):
-        self.numerator = numerator
-        self.denominator = denominator
+        
+        if isinstance(numerator, str):
+            numerator = numerator.strip()
+            numerator, denominator = numerator.split('/')
 
     def gcd(a, b):
         #TODO
