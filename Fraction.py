@@ -9,7 +9,6 @@ class Fraction(object):
             return abs(a)
         else:
             return gcd(b, a % b)
-        pass
 
     def get_numerator(self):
         #TODO
