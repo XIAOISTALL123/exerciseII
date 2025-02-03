@@ -27,13 +27,10 @@ class Fraction(object):
             return gcd(b, a % b)
 
     def get_numerator(self):
-        #TODO
-        pass
+        return str(self.numerator//gcd(self.numerator, self.denominator))
 
     def get_denominator(self):
-        #TODO
-        pass
+        return str(self.denominator//gcd(self.numerator, self.denominator))
 
     def get_fraction(self):
-        #TODO
-        pass
+        return self.get_numerator() + '/' + self.get_denominator()
