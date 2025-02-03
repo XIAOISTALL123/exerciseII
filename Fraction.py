@@ -31,8 +31,7 @@ class Fraction(object):
         return str(self.numerator//gcd(self.numerator, self.denominator))
 
     def get_denominator(self):
-        #TODO
-        pass
+        return str(self.denominator//gcd(self.numerator, self.denominator))
 
     def get_fraction(self):
         #TODO
