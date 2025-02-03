@@ -20,12 +20,11 @@ class Fraction(object):
         if denominator == 0:
             raise ZeroDivisionError
 
-    
     def gcd(a, b):
-        if b == 0:
-            return abs(a)
+        if int(b) == 0 or int(a) == 0:
+            return 0
         else:
-            return gcd(b, a % b)
+            return Fraction.euclidean(int(a), int(b))
 
     def get_numerator(self):
         if Fraction.gcd(self.numerator, self.denominator) != 0:
@@ -55,5 +54,3 @@ class Fraction(object):
             else:
                 return self.get_numerator() + '/' + self.get_denominator()
         except:
-            return '0'
-    
