@@ -20,6 +20,7 @@ class Fraction(object):
         if denominator == 0:
             raise ZeroDivisionError
 
+    
     def gcd(a, b):
         if b == 0:
             return abs(a)
@@ -27,10 +28,19 @@ class Fraction(object):
             return gcd(b, a % b)
 
     def get_numerator(self):
-        return str(self.numerator//gcd(self.numerator, self.denominator))
+        if Fraction.gcd(self.numerator, self.denominator) != 0:
+            return str(int(self.numerator)//Fraction.gcd(self.numerator, self.denominator))
+        else:
+            return '0'
 
     def get_denominator(self):
-        return str(self.denominator//gcd(self.numerator, self.denominator))
+        if Fraction.gcd(self.numerator, self.denominator) != 0:
+            return str(int(self.denominator)//Fraction.gcd(self.numerator, self.denominator))
+        else:
+            return '0'
 
     def get_fraction(self):
-        return self.get_numerator() + '/' + self.get_denominator()
+        #TODO
+        pass
+    
+    
